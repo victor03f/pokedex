@@ -1,3 +1,4 @@
+import "../components/Pokedex.css"
 import { useEffect, useState } from "react"
 
 export default function Pokedex() {
@@ -19,20 +20,34 @@ export default function Pokedex() {
     }, [id]
         //useEffect acontece quando é feita a conexão com a API, retornanado os dados do pokemon a partir do ID
     )
-const nextPokemon = () =>{
-    setid(id+1)
-}
+    const nextPokemon = () => {
+        setid(id + 1)
+
+    }
+    const previousPokemon = () => {
+        setid(id - 1)
+    }
+
     return (
         <div>
             {
                 pokemon && (
                     <div className="pokemon">
 
-                        <h1>Pokémon</h1>
+                        <h1>Pokédex</h1>
+                        <section className= "card"> 
+
+                        
                         <p>{pokemon.name}</p>
                         <p>Peso:{pokemon.weight}g</p>
-                           <img src={pokemon.sprites.front_default} />
+                        {pokemon.types.map((type, index) => (
+                            <p key={index}>{type.type.name}</p>
+                        ))}
+
+                        <img src={pokemon.sprites.front_default} />
                         <button onClick={nextPokemon}>Próximo</button>
+                        <button onClick={previousPokemon}>Anterior</button>
+                        </section>
                     </div>
                 )
             }
