@@ -1,21 +1,16 @@
-.pokemon{
-    margin-top: 25px;
-    margin-left: 750px;
-}
-
-
-.card {
-    max-height: fit-content;
-    max-width: 400px;
-    background-color: rgb(47, 134, 168);
-    border-radius: 10px;
+.card{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    
+    flex-direction: column;
+    background-color: rgb(47, 134, 168);
+    justify-content: space-around;
+    width: 30vw;
+    height: 30vw;
 }
+
 .card p{
-    font-size: 18px;
+    font-size: 20px;
     
 }
+
